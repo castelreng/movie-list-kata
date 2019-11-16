@@ -20,7 +20,22 @@ app.get('/getMovies', function (req, res) {
             res.json(movies);
         })
         .catch((err) => {
-            console.log('Error getting documents', err);
+            res.status(400).json({ message: 'Error getting documents', error: err });
+        });
+});
+
+
+app.get('/getMovie/:id', function (req, res) {
+    db.collection('movies').doc(req.params.id).get()
+        .then(doc => {
+            if (!doc.exists) {
+                res.status(404).json({ message: 'No such document!');
+            } else {
+                res.json({ id: doc.id, ...doc.data() });
+            }
+        })
+        .catch(err => {
+            res.status(400).json({ message: 'Error getting document', error: err });
         });
 });
 
