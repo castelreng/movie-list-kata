@@ -15,7 +15,8 @@ import VueAxios from "vue-axios";
 const routes = [
   { path: "/list", component: MovieList, name: "list" },
   { path: "/detail/:id", component: MovieDetail, name: "detail" },
-  { path: "/edit/:id", component: MovieEdit, name: "edit" }
+  { path: "/edit/:id", component: MovieEdit, name: "edit" },
+  { path: "/edit", component: MovieEdit, name: "add" }
 ];
 const router = new VueRouter({
   routes // short for `routes: routes`

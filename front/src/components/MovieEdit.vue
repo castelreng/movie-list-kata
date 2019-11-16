@@ -55,29 +55,45 @@
 export default {
   name: "MovieEdit",
   data: function() {
-    return { movie: {} };
+    return { movie: {}, insertMode: false };
   },
   methods: {
     saveMovie: function() {
-      this.axios
-        .post("http://localhost:3000/editMovie/", this.movie)
-        .then(() => {
-          this.$router.push({ name: "detail", params: { id: this.movie.id } });
-        })
-        .catch(error => {
-          alert("Something goes wrong : ", error.message);
-        });
+      if (this.insertMode) {
+        this.axios
+          .post("http://localhost:3000/addMovie/", this.movie)
+          .then(() => {
+            this.$router.push({
+              name: "list"
+            });
+          })
+          .catch(error => {
+            alert("Something goes wrong : ", error.message);
+          });
+      } else {
+        this.axios
+          .post("http://localhost:3000/editMovie/", this.movie)
+          .then(() => {
+            this.$router.push({
+              name: "detail",
+              params: { id: this.movie.id }
+            });
+          })
+          .catch(error => {
+            alert("Something goes wrong : ", error.message);
+          });
+      }
     }
   },
   mounted: function() {
+    this.insertMode = true;
     if (this.$route.params.id) {
       this.axios
         .get("http://localhost:3000/getMovie/".concat(this.$route.params.id))
         .then(response => {
           this.movie = response.data;
+          this.insertMode = false;
         });
-    } else {
-      alert("The movie id is missing");
     }
   }
 };
