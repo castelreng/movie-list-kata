@@ -28,6 +28,4 @@ export default {
   components: {}
 };
 </script>
-
-<style>
-</style>
+<style src="./assets/css/style.css"></style>
