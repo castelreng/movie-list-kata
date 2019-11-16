@@ -52,6 +52,27 @@ app.post('/addMovie', function (req, res) {
         });
 });
 
+app.post('/editMovie', function (req, res) {
+    db.collection('movies').doc(req.body.id).update({ ...req.body })
+        .then(() => {
+            res.status(200).json({ ...req.body });
+        })
+        .catch(err => {
+            res.status(400).json({ message: 'Error editing document', error: err });
+        });
+});
+
+
+app.post('/deleteMovie', function (req, res) {
+    db.collection('movies').doc(req.body.id).delete()
+        .then(() => {
+            res.status(200).json({ message: 'OK' });
+        })
+        .catch(err => {
+            res.status(400).json({ message: 'Error deleting document', error: err });
+        });
+});
+
 app.listen(3000, function () {
     console.log('Example app listening on port 3000!')
 })
