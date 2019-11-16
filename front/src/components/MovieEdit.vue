@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h3>MOVIE EDIT</h3>
     <div class="flex flex-col w-full mb-6">
       <label class="mb-2 font-bold text-gray-700">Title</label>
       <input

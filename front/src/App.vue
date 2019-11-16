@@ -1,6 +1,12 @@
 <template>
-  <div id="app" class="bg-gray-200 px-5">
-    <router-view></router-view>
+  <div id="app" class="bg-gray-200">
+    <router-link
+      to="/list"
+      class="w-full bg-purple-500 font-semibold text-xl text-white px-3 py-2 fixed shadow-md"
+    >Movies</router-link>
+    <div class="px-5 pt-16">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 

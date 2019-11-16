@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h3>MOVIE DETAIL</h3>
     <img :src="movie.imageUrl" class="rounded-lg w-full h-48 object-cover" />
     <div class>
       <p class="text-xl text-gray-800">{{ movie.title }}</p>
