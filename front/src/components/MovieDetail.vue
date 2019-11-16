@@ -1,5 +1,20 @@
 <template>
-  <h3>MOVIE DETAIL</h3>
+  <div>
+    <h3>MOVIE DETAIL</h3>
+    <img :src="movie.imageUrl" class="rounded-lg w-full h-48 object-cover" />
+    <div class>
+      <p class="text-xl text-gray-800">{{ movie.title }}</p>
+      <p class="text-base text-gray-700">{{ movie.directedBy }}</p>
+      <p class="text-sm text-gray-700">{{ movie.description }}</p>
+    </div>
+    <button
+      type="button"
+      v-on:click="editMovie()"
+      class="fixed bottom-0 right-0 mr-4 mb-4 rounded-full bg-teal-500 text-white w-12 h-12 text-lg shadow-2xl"
+    >
+      <i class="fas fa-pencil-alt"></i>
+    </button>
+  </div>
 </template>
 
 <script>
@@ -12,6 +27,11 @@ export default {
     return {
       movie: {}
     };
+  },
+  methods: {
+    editMovie: function() {
+      this.$router.push({ name: "edit", params: { id: this.movie.id } });
+    }
   },
   mounted: function() {
     if (this.$route.params.id) {

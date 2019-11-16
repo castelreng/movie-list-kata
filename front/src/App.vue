@@ -12,11 +12,10 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import axios from "axios";
 import VueAxios from "vue-axios";
-
 const routes = [
   { path: "/list", component: MovieList, name: "list" },
   { path: "/detail/:id", component: MovieDetail, name: "detail" },
-  { path: "/edit", component: MovieEdit, name: "edit" }
+  { path: "/edit/:id", component: MovieEdit, name: "edit" }
 ];
 const router = new VueRouter({
   routes // short for `routes: routes`
@@ -31,3 +30,4 @@ export default {
 };
 </script>
 <style src="./assets/css/style.css"></style>
+<style src="../node_modules/@fortawesome/fontawesome-free/css/all.min.css"></style>
