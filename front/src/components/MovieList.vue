@@ -2,7 +2,7 @@
   <div>
     <div class="flex flex-col sm:flex-row">
       <div
-        class="rounded-lg bg-white mb-5 mr-5 w-full sm:w-1/2 md:w-1/4 shadow-md"
+        class="rounded-lg bg-white mb-5 mr-5 w-full sm:w-1/2 md:w-1/4 shadow-md cursor-pointer"
         v-for="movie in movies"
         :key="movie.id"
         v-on:click="goToDetails(movie.id)"
