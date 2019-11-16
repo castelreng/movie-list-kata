@@ -10,9 +10,19 @@ admin.initializeApp({
 
 let db = admin.firestore();
 
-app.get('/', function (req, res) {
-    res.send('Hello World!')
-})
+app.get('/getMovies', function (req, res) {
+    db.collection('movies').get()
+        .then((snapshot) => {
+            let movies = [];
+            snapshot.forEach((doc) => {
+                movies.push({ id: doc.id, ...doc.data() });
+            });
+            res.json(movies);
+        })
+        .catch((err) => {
+            console.log('Error getting documents', err);
+        });
+});
 
 app.listen(3000, function () {
     console.log('Example app listening on port 3000!')
