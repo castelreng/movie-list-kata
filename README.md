@@ -5,7 +5,7 @@
 ### 1) Server side
 - Setup **express js** server (5 min)
 - Setup firestore (30 min)
-- API REQUEST CRUD
+- API REQUEST CRUD (30 min)
 ### 2) Client side
 - Setup **Vue.js**
 - Develop 3 screens (ListMovies, MovieDetail, MovieEdition)
