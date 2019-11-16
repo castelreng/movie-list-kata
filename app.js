@@ -1,14 +1,14 @@
-const express = require('express')
-const app = express()
-const admin = require('firebase-admin');
+const express = require('express');
+const app = express();
 
-let serviceAccount = require('./config/test-firebase-4521b-369c140244a5.json');
+const firebase = require("firebase/app");
+require("firebase/firestore");
 
-admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount)
-});
+let firebaseConfig = require('./config/firebase_config.json');
 
-let db = admin.firestore();
+firebase.initializeApp(firebaseConfig);
+
+let db = firebase.firestore();
 
 app.use(express.json());
 
