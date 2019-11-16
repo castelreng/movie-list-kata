@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-
+var cors = require('cors')
 const firebase = require("firebase/app");
 require("firebase/firestore");
 
@@ -10,6 +10,7 @@ firebase.initializeApp(firebaseConfig);
 
 let db = firebase.firestore();
 
+app.use(cors())
 app.use(express.json());
 
 

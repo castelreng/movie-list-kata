@@ -9,12 +9,14 @@
     "tailwind": "npx tailwind build src/assets/css/tailwind.css -o src/assets/css/style.css"
   },
   "dependencies": {
+    "axios": "^0.19.0",
     "core-js": "^3.3.2",
     "tailwindcss": "^1.1.3",
     "tailwindcss-border-gradients": "^2.0.3",
     "tailwindcss-transforms": "^2.2.0",
     "tailwindcss-transitions": "^2.1.0",
     "vue": "^2.6.10",
+    "vue-axios": "^2.1.5",
     "vue-router": "^3.1.3"
   },
   "devDependencies": {
@@ -36,7 +38,9 @@
       "plugin:vue/essential",
       "eslint:recommended"
     ],
-    "rules": {},
+    "rules": {
+      "no-console": "off"
+    },
     "parserOptions": {
       "parser": "babel-eslint"
     }

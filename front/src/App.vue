@@ -10,6 +10,8 @@ import MovieDetail from "./components/MovieDetail.vue";
 import MovieEdit from "./components/MovieEdit.vue";
 import Vue from "vue";
 import VueRouter from "vue-router";
+import axios from "axios";
+import VueAxios from "vue-axios";
 
 const routes = [
   { path: "/list", component: MovieList },
@@ -21,7 +23,7 @@ const router = new VueRouter({
 });
 
 Vue.use(VueRouter);
-
+Vue.use(VueAxios, axios);
 export default {
   name: "app",
   router,
