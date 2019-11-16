@@ -10,6 +10,9 @@ admin.initializeApp({
 
 let db = admin.firestore();
 
+app.use(express.json());
+
+
 app.get('/getMovies', function (req, res) {
     db.collection('movies').get()
         .then((snapshot) => {
@@ -29,13 +32,23 @@ app.get('/getMovie/:id', function (req, res) {
     db.collection('movies').doc(req.params.id).get()
         .then(doc => {
             if (!doc.exists) {
-                res.status(404).json({ message: 'No such document!');
+                res.status(404).json({ message: 'No such document!' });
             } else {
                 res.json({ id: doc.id, ...doc.data() });
             }
         })
         .catch(err => {
             res.status(400).json({ message: 'Error getting document', error: err });
+        });
+});
+
+app.post('/addMovie', function (req, res) {
+    db.collection('movies').add(req.body)
+        .then(doc => {
+            res.status(201).json({ id: doc.id, ...req.body });
+        })
+        .catch(err => {
+            res.status(400).json({ message: 'Error adding document', error: err });
         });
 });
 
