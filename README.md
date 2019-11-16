@@ -7,7 +7,7 @@
 - Setup firestore (30 min)
 - API REQUEST CRUD (30 min)
 ### 2) Client side
-- Setup **Vue.js**
+- Setup **Vue.js** (10 min)
 - Develop 3 screens (ListMovies, MovieDetail, MovieEdition)
 - Setup **vue-router**
 - Beautify with **Tailwind CSS**
