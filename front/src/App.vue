@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="bg-gray-200">
+  <div id="app">
     <router-link
       to="/list"
       class="w-full bg-purple-500 font-semibold text-xl text-white px-3 py-2 fixed shadow-md"
@@ -38,3 +38,9 @@ export default {
 </script>
 <style src="./assets/css/style.css"></style>
 <style src="../node_modules/@fortawesome/fontawesome-free/css/all.min.css"></style>
+<style>
+html,
+body {
+  background-color: #edf2f7;
+}
+</style>
