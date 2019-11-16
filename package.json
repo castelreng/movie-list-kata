@@ -1,0 +1,22 @@
+{
+  "name": "movie-list-kata",
+  "version": "1.0.0",
+  "description": "- Setup **express js** server\r - Setup firestore\r - API REQUEST CRUD\r ### 2) Client side\r - Setup **Vue.js**\r - Develop 3 screens (ListMovies, MovieDetail, MovieEdition)\r - Setup **vue-router**\r - Beautify with **Tailwind CSS**",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/castelreng/movie-list-kata.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/castelreng/movie-list-kata/issues"
+  },
+  "homepage": "https://github.com/castelreng/movie-list-kata#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
