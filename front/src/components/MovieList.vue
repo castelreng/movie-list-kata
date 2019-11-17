@@ -9,7 +9,7 @@
       >
         <div class="rounded-lg bg-white mb-5 shadow-md cursor-pointer">
           <div class="bg-gray-300 rounded-t-lg">
-            <img :src="movie.imageUrl" class="w-full h-64 object-contain" />
+            <img :src="movie.imageUrl" class="w-full h-64 object-contain" alt="no image" />
           </div>
           <div class="py-2 px-4">
             <p class="text-xl text-gray-800">{{ movie.title }}</p>

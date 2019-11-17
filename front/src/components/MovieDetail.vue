@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col sm:flex-row">
-    <img :src="movie.imageUrl" class="object-contain w-full sm:w-48 h-64 rounded-lg" />
+    <img :src="movie.imageUrl" alt="no image" class="object-contain w-full sm:w-48 h-64 rounded-lg" />
     <div class="ml-2">
       <p class="text-xl font-semibold text-gray-800">{{ movie.title }}</p>
       <p class="text-base text-gray-700">{{ movie.directedBy }}</p>
