@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <nav-bar title="Movies" />
-    <div class="px-5 pt-16">
+    <div class="px-3 pt-16">
       <router-view></router-view>
     </div>
   </div>
@@ -40,6 +40,7 @@ export default {
 </script>
 <style src="./assets/css/style.css"></style>
 <style src="../node_modules/@fortawesome/fontawesome-free/css/all.min.css"></style>
+<style src="../node_modules/bootstrap/dist/css/bootstrap-grid.min.css"></style>
 <style>
 html,
 body {

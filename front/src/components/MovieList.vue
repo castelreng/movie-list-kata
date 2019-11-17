@@ -1,16 +1,20 @@
 <template>
   <div>
-    <div class="flex flex-col sm:flex-row">
+    <div class="row">
       <div
-        class="rounded-lg bg-white mb-5 mr-5 w-full sm:w-1/2 md:w-1/4 shadow-md cursor-pointer"
+        class="col-12 col-md-3"
         v-for="movie in movies"
         :key="movie.id"
         v-on:click="goToDetails(movie.id)"
       >
-        <img :src="movie.imageUrl" class="rounded-t-lg w-full h-48 object-cover" />
-        <div class="py-2 px-4">
-          <p class="text-xl text-gray-800">{{ movie.title }}</p>
-          <p class="text-base text-gray-700">{{ movie.directedBy }}</p>
+        <div class="rounded-lg bg-white mb-5 shadow-md cursor-pointer">
+          <div class="bg-gray-300">
+            <img :src="movie.imageUrl" class="rounded-t-lg w-full h-64 object-contain" />
+          </div>
+          <div class="py-2 px-4">
+            <p class="text-xl text-gray-800">{{ movie.title }}</p>
+            <p class="text-base text-gray-700">{{ movie.directedBy }}</p>
+          </div>
         </div>
       </div>
     </div>
