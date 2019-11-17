@@ -64,8 +64,8 @@ app.post('/editMovie', function (req, res) {
 });
 
 
-app.post('/deleteMovie', function (req, res) {
-    db.collection('movies').doc(req.body.id).delete()
+app.delete('/deleteMovie/:id', function (req, res) {
+    db.collection('movies').doc(req.params.id).delete()
         .then(() => {
             res.status(200).json({ message: 'OK' });
         })
