@@ -7,6 +7,7 @@
         class="py-3 px-3 rounded shadow text-gray-700 border border-gray-100 focus:border-blue-400"
         placeholder="Your movie title"
         name="title"
+        required
         v-model="movie.title"
       />
     </div>
@@ -17,6 +18,7 @@
         class="py-3 px-3 rounded shadow text-gray-700 border border-gray-100 focus:border-blue-400"
         placeholder="eg: Anthony Hopkins"
         name="directedBy"
+        required
         v-model="movie.directedBy"
       />
     </div>
@@ -27,6 +29,7 @@
         class="py-3 px-3 rounded shadow text-gray-700 border border-gray-100 focus:border-blue-400"
         placeholder="Your image url"
         name="imageUrl"
+        required
         v-model="movie.imageUrl"
       />
     </div>
@@ -37,6 +40,7 @@
         placeholder="Your movie description"
         rows="5"
         name="description"
+        required
         v-model="movie.description"
       ></textarea>
     </div>
@@ -57,7 +61,28 @@ export default {
     return { movie: {}, insertMode: false };
   },
   methods: {
+    isFormValid: function() {
+      var isValid = true;
+      if (!this.movie.title) {
+        isValid = false;
+        alert("Title required");
+      }
+      if (!this.movie.directedBy) {
+        isValid = false;
+        alert("DirectedBy required");
+      }
+      if (!this.movie.imageUrl) {
+        isValid = false;
+        alert("ImageUrl required");
+      }
+      if (!this.movie.description) {
+        isValid = false;
+        alert("Description required");
+      }
+      return isValid;
+    },
     saveMovie: function() {
+      if (!this.isFormValid()) return;
       if (this.insertMode) {
         this.axios
           .post("http://localhost:3000/addMovie/", this.movie)
