@@ -5,7 +5,7 @@
       alt="no image"
       class="object-contain w-full sm:w-48 h-64 rounded-lg bg-gray-300"
     />
-    <div class="ml-2">
+    <div class="ml-2 mt-2 sm:mt-0">
       <p class="text-xl font-semibold text-gray-800">{{ movie.title }}</p>
       <p class="text-base text-gray-700">{{ movie.directedBy }}</p>
       <p class="text-sm text-gray-700">{{ movie.description }}</p>
