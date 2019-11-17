@@ -7,12 +7,12 @@
         :key="movie.id"
         v-on:click="goToDetails(movie.id)"
       >
-        <div class="rounded-lg bg-white mb-5 shadow-md cursor-pointer">
+        <div class="rounded-lg bg-white mb-3 shadow-md cursor-pointer">
           <div class="bg-gray-300 rounded-t-lg">
             <img :src="movie.imageUrl" class="w-full h-64 object-contain" alt="no image" />
           </div>
-          <div class="py-2 px-4">
-            <p class="text-xl text-gray-800">{{ movie.title }}</p>
+          <div class="py-3 px-4">
+            <p class="text-xl font-semibold text-gray-800">{{ movie.title }}</p>
             <p class="text-base text-gray-700">{{ movie.directedBy }}</p>
           </div>
         </div>
