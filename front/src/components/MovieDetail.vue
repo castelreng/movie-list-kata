@@ -1,8 +1,8 @@
 <template>
-  <div>
-    <img :src="movie.imageUrl" class="rounded-lg w-full h-48 object-cover" />
-    <div class>
-      <p class="text-xl text-gray-800">{{ movie.title }}</p>
+  <div class="flex flex-col sm:flex-row">
+    <img :src="movie.imageUrl" class="object-contain w-full sm:w-48 h-64 rounded-lg" />
+    <div class="ml-2">
+      <p class="text-xl font-semibold text-gray-800">{{ movie.title }}</p>
       <p class="text-base text-gray-700">{{ movie.directedBy }}</p>
       <p class="text-sm text-gray-700">{{ movie.description }}</p>
     </div>
