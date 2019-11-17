@@ -1,7 +1,9 @@
 <template>
-  <div class="w-full bg-purple-500 font-semibold text-xl text-white px-3 py-2 fixed shadow-md z-10">
+  <div
+    class="w-full bg-purple-500 font-semibold text-xl text-white px-3 py-2 fixed shadow-md z-10 flex justify-between"
+  >
     <router-link to="/list">{{title}}</router-link>
-    <div class="float-right mr-4 cursor-pointer" v-if="isDetailMovie()" v-on:click="deleteMovie()">
+    <div class="cursor-pointer" v-if="isDetailMovie()" v-on:click="deleteMovie()">
       <i class="far fa-trash-alt"></i>
     </div>
   </div>
