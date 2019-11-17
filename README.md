@@ -10,4 +10,4 @@
 - Setup **Vue.js** (10 min)
 - Develop 3 screens (ListMovies, MovieDetail, MovieEdition) (2 hour)
 - Setup **vue-router** (15 min)
-- Beautify with **Tailwind CSS**
+- Beautify with **Tailwind CSS** (1 hour 30 min)
