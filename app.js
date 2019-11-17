@@ -15,7 +15,7 @@ app.use(express.json());
 
 
 app.get('/getMovies', function (req, res) {
-    db.collection('movies').get()
+    db.collection('movies').orderBy('title').get()
         .then((snapshot) => {
             let movies = [];
             snapshot.forEach((doc) => {
