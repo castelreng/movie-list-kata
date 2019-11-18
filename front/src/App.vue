@@ -12,6 +12,7 @@ import MovieList from "./views/MovieList.vue";
 import MovieDetail from "./views/MovieDetail.vue";
 import MovieEdit from "./views/MovieEdit.vue";
 import NavBar from "./components/NavBar.vue";
+import FabButton from "./components/FabButton.vue";
 
 import Vue from "vue";
 import VueRouter from "vue-router";
@@ -27,7 +28,7 @@ const routes = [
 const router = new VueRouter({
   routes // short for `routes: routes`
 });
-
+Vue.component("fab-button", FabButton);
 Vue.use(VueRouter);
 Vue.use(VueAxios, axios);
 export default {

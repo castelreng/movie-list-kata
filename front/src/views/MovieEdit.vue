@@ -44,13 +44,7 @@
         v-model="movie.description"
       ></textarea>
     </div>
-    <button
-      type="button"
-      v-on:click="saveMovie()"
-      class="fixed bottom-0 right-0 mr-4 mb-4 rounded-full bg-purple-500 text-white w-12 h-12 text-lg shadow-2xl"
-    >
-      <i class="fas fa-save"></i>
-    </button>
+    <fab-button icon="fas fa-save" :on-click="saveMovie" />
   </div>
 </template>
 

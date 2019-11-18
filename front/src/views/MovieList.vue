@@ -18,13 +18,7 @@
         </div>
       </div>
     </div>
-    <button
-      type="button"
-      v-on:click="addMovie()"
-      class="fixed bottom-0 right-0 mr-4 mb-4 rounded-full bg-purple-500 text-white w-12 h-12 text-lg shadow-2xl"
-    >
-      <i class="fas fa-plus"></i>
-    </button>
+    <fab-button icon="fas fa-plus" :on-click="addMovie" />
   </div>
 </template>
 
