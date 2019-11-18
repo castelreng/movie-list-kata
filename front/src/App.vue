@@ -8,9 +8,9 @@
 </template>
 
 <script>
-import MovieList from "./components/MovieList.vue";
-import MovieDetail from "./components/MovieDetail.vue";
-import MovieEdit from "./components/MovieEdit.vue";
+import MovieList from "./views/MovieList.vue";
+import MovieDetail from "./views/MovieDetail.vue";
+import MovieEdit from "./views/MovieEdit.vue";
 import NavBar from "./components/NavBar.vue";
 
 import Vue from "vue";
