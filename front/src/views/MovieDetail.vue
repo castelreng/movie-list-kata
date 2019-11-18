@@ -15,6 +15,7 @@
 </template>
 
 <script>
+import Movie from "../services/Movie";
 export default {
   name: "MovieDetail",
   props: {
@@ -31,12 +32,9 @@ export default {
     }
   },
   mounted: function() {
+    Movie.getMovie(this.$route.params.id);
     if (this.$route.params.id) {
-      this.axios
-        .get("http://localhost:3000/getMovie/".concat(this.$route.params.id))
-        .then(response => {
-          this.movie = response.data;
-        });
+      Movie.getMovie(this.$route.params.id).then(data => (this.movie = data));
     } else {
       alert("The movie id is missing");
     }

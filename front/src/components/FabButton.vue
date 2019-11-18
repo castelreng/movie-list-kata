@@ -13,7 +13,7 @@ export default {
   name: "FabButton",
   props: {
     icon: String,
-    onClick: String
+    onClick: Function
   }
 };
 </script>
