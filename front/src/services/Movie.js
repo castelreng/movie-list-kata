@@ -19,7 +19,7 @@ export default {
                 });
         });
     },
-    addMovie: function (movie) {
+    add: function (movie) {
         return new Promise((resolve, reject) => {
             axios
                 .post(API_URL.concat("addMovie/"), movie)
@@ -31,7 +31,7 @@ export default {
                 });
         });
     },
-    editMovie: function (movie) {
+    edit: function (movie) {
         return new Promise((resolve, reject) => {
             axios
                 .post(API_URL.concat("editMovie/"), movie)
@@ -43,7 +43,7 @@ export default {
                 });
         });
     },
-    deleteMovie: function (id) {
+    delete: function (id) {
         return new Promise((resolve, reject) => {
             axios
                 .delete(API_URL.concat('deleteMovie/', id))

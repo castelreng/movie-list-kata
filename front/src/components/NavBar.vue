@@ -22,7 +22,7 @@ export default {
     },
     deleteMovie: function() {
       if (confirm("Do you really want to delete this movie ?")) {
-        Movie.deleteMovie(this.$route.params.id).then(() => {
+        Movie.delete(this.$route.params.id).then(() => {
           this.$router.push({
             name: "list"
           });

@@ -79,7 +79,7 @@ export default {
     saveMovie: function() {
       if (!this.isFormValid()) return;
       if (this.insertMode) {
-        Movie.addMovie(this.movie)
+        Movie.add(this.movie)
           .then(() => {
             this.$router.push({
               name: "list"
@@ -89,7 +89,7 @@ export default {
             alert(error);
           });
       } else {
-        Movie.editMovie(this.movie)
+        Movie.edit(this.movie)
           .then(() => {
             this.$router.push({
               name: "detail",
