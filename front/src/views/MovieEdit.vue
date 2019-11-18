@@ -89,8 +89,7 @@ export default {
             alert(error);
           });
       } else {
-        this.axios
-          .post("http://localhost:3000/editMovie/", this.movie)
+        Movie.editMovie(this.movie)
           .then(() => {
             this.$router.push({
               name: "detail",
@@ -98,7 +97,7 @@ export default {
             });
           })
           .catch(error => {
-            alert("Something goes wrong : ", error.message);
+            alert(error);
           });
       }
     }

@@ -24,5 +24,17 @@ export default {
                     reject("Something goes wrong : ", error.message);
                 });
         });
+    },
+    editMovie: function (movie) {
+        return new Promise((resolve, reject) => {
+            axios
+                .post(API_URL.concat("editMovie/"), movie)
+                .then(response => {
+                    resolve(response.data);
+                })
+                .catch(error => {
+                    reject("Something goes wrong : ", error.message);
+                });
+        });
     }
 }
