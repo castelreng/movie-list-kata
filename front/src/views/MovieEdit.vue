@@ -105,7 +105,7 @@ export default {
   mounted: function() {
     this.insertMode = true;
     if (this.$route.params.id) {
-      Movie.getMovie(this.$route.params.id).then(data => {
+      Movie.get(this.$route.params.id).then(data => {
         this.movie = data;
         this.insertMode = false;
       });

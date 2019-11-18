@@ -1,10 +1,16 @@
 import axios from "axios";
 const API_URL = "http://localhost:3000/";
 export default {
-    getMovie: function (id) {
+    get: function (id) {
         return new Promise((resolve, reject) => {
+            var url = ""
+            if (id) {
+                url = API_URL.concat("getMovie/", id);
+            } else {
+                url = API_URL.concat("getMovies/");
+            }
             axios
-                .get(API_URL.concat("getMovie/", id))
+                .get(url)
                 .then(response => {
                     resolve(response.data);
                 })

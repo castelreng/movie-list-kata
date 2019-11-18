@@ -33,7 +33,7 @@ export default {
   },
   mounted: function() {
     if (this.$route.params.id) {
-      Movie.getMovie(this.$route.params.id).then(data => (this.movie = data));
+      Movie.get(this.$route.params.id).then(data => (this.movie = data));
     } else {
       alert("The movie id is missing");
     }

@@ -23,6 +23,7 @@
 </template>
 
 <script>
+import Movie from "../services/Movie";
 export default {
   name: "MovieList",
   props: {
@@ -42,9 +43,7 @@ export default {
     }
   },
   mounted: function() {
-    this.axios.get("http://localhost:3000/getMovies").then(response => {
-      this.movies = response.data;
-    });
+    Movie.get().then(data => (this.movies = data));
   }
 };
 </script>
