@@ -61,15 +61,15 @@ export default {
         isValid = false;
         alert("Title required");
       }
-      if (!this.movie.directedBy) {
+      if (isValid && !this.movie.directedBy) {
         isValid = false;
         alert("DirectedBy required");
       }
-      if (!this.movie.imageUrl) {
+      if (isValid && !this.movie.imageUrl) {
         isValid = false;
         alert("ImageUrl required");
       }
-      if (!this.movie.description) {
+      if (isValid && !this.movie.description) {
         isValid = false;
         alert("Description required");
       }
