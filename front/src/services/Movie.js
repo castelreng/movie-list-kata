@@ -8,8 +8,20 @@ export default {
                 .then(response => {
                     resolve(response.data);
                 })
-                .catch(() => {
-                    reject("Oups something goes wrong");
+                .catch(error => {
+                    reject("Something goes wrong : ", error.message);
+                });
+        });
+    },
+    addMovie: function (movie) {
+        return new Promise((resolve, reject) => {
+            axios
+                .post(API_URL.concat("addMovie/"), movie)
+                .then(response => {
+                    resolve(response.data);
+                })
+                .catch(error => {
+                    reject("Something goes wrong : ", error.message);
                 });
         });
     }

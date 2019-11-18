@@ -49,6 +49,7 @@
 </template>
 
 <script>
+import Movie from "../services/Movie";
 export default {
   name: "MovieEdit",
   data: function() {
@@ -78,15 +79,14 @@ export default {
     saveMovie: function() {
       if (!this.isFormValid()) return;
       if (this.insertMode) {
-        this.axios
-          .post("http://localhost:3000/addMovie/", this.movie)
+        Movie.addMovie(this.movie)
           .then(() => {
             this.$router.push({
               name: "list"
             });
           })
           .catch(error => {
-            alert("Something goes wrong : ", error.message);
+            alert(error);
           });
       } else {
         this.axios

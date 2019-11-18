@@ -32,7 +32,6 @@ export default {
     }
   },
   mounted: function() {
-    Movie.getMovie(this.$route.params.id);
     if (this.$route.params.id) {
       Movie.getMovie(this.$route.params.id).then(data => (this.movie = data));
     } else {
