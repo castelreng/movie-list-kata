@@ -36,5 +36,15 @@ export default {
                     reject("Something goes wrong : ", error.message);
                 });
         });
+    },
+    deleteMovie: function (id) {
+        return new Promise((resolve, reject) => {
+            axios
+                .delete(API_URL.concat('deleteMovie/', id))
+                .then(resolve())
+                .catch(error => {
+                    reject("Something goes wrong : ", error.message);
+                });
+        });
     }
 }

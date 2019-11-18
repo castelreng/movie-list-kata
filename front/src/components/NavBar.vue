@@ -10,6 +10,7 @@
 </template>
 
 <script>
+import Movie from "../services/Movie";
 export default {
   name: "NavBar",
   props: {
@@ -21,15 +22,11 @@ export default {
     },
     deleteMovie: function() {
       if (confirm("Do you really want to delete this movie ?")) {
-        this.axios
-          .delete(
-            "http://localhost:3000/deleteMovie/".concat(this.$route.params.id)
-          )
-          .then(() => {
-            this.$router.push({
-              name: "list"
-            });
+        Movie.deleteMovie(this.$route.params.id).then(() => {
+          this.$router.push({
+            name: "list"
           });
+        });
       }
     }
   }

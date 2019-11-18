@@ -105,12 +105,10 @@ export default {
   mounted: function() {
     this.insertMode = true;
     if (this.$route.params.id) {
-      this.axios
-        .get("http://localhost:3000/getMovie/".concat(this.$route.params.id))
-        .then(response => {
-          this.movie = response.data;
-          this.insertMode = false;
-        });
+      Movie.getMovie(this.$route.params.id).then(data => {
+        this.movie = data;
+        this.insertMode = false;
+      });
     }
   }
 };
